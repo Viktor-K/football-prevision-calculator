@@ -12,10 +12,10 @@ import java.util.List;
 /**
  * @author vcaprio
  */
-public class NapoliChampionsCriteria extends Criteria{
+public class LazioChampionsCriteria extends Criteria{
 
-    public NapoliChampionsCriteria(){
-        team = Teams.NAPOLI;
+    public LazioChampionsCriteria(){
+        team = Teams.LAZIO;
     }
 
     @Override
@@ -28,13 +28,13 @@ public class NapoliChampionsCriteria extends Criteria{
         int lazioPoints = classifica.get(Teams.LAZIO).getPunteggio();
         int napoliPoints = classifica.get(Teams.NAPOLI).getPunteggio();
 
-
-        if (napoliPoints < lazioPoints && (lazioPoints < romaPoints || lazioPoints == romaPoints)){
+        
+        if (lazioPoints < romaPoints && (romaPoints < napoliPoints || romaPoints == napoliPoints)){
             infoClassificazione.setChampions(false);
             return infoClassificazione;
         }
 
-        if(napoliPoints < romaPoints && (romaPoints < lazioPoints || romaPoints == lazioPoints)){
+        if(lazioPoints < napoliPoints && (napoliPoints < romaPoints || napoliPoints == romaPoints)){
             infoClassificazione.setChampions(false);
             return infoClassificazione;
         }
@@ -44,34 +44,32 @@ public class NapoliChampionsCriteria extends Criteria{
             System.out.print("\nParimerito Napoli Lazio Roma\n");
         }
 
-        boolean vinceControLazio = true;
+        boolean vinceControNapoli = true;
         boolean vinceControRoma = true;
 
-        if(napoliPoints < romaPoints && napoliPoints == lazioPoints){
-            if (processVincitrice(scontriDirettiSquadre, Teams.LAZIO)){
+        if(lazioPoints < romaPoints && napoliPoints == lazioPoints){
+            if (processVincitrice(scontriDirettiSquadre, Teams.NAPOLI)){
                 infoClassificazione.setChampions(true);
-                infoClassificazione.addConfrontoVinto(Teams.LAZIO);
+                infoClassificazione.addConfrontoVinto(Teams.NAPOLI);
                 return infoClassificazione;
             }
             else{
-                System.out.print("\nNapoli perde scontro diretto contro la Lazio");
-                vinceControLazio = false;
+                vinceControNapoli = false;
             }
         }
 
-        if(napoliPoints < lazioPoints && romaPoints == napoliPoints){
+        if(lazioPoints < napoliPoints && romaPoints == lazioPoints){
             if(processVincitrice(scontriDirettiSquadre, Teams.ROMA)){
                 infoClassificazione.setChampions(true);
                 infoClassificazione.addConfrontoVinto(Teams.ROMA);
                 return infoClassificazione;
             }
             else{
-                System.out.print("\nNapoli perde scontro diretto contro la Roma");
                 vinceControRoma = false;
             }
         }
 
-        if(!vinceControLazio || !vinceControRoma){
+        if(!vinceControNapoli || !vinceControRoma){
             infoClassificazione.setChampions(false);
             return infoClassificazione;
         }

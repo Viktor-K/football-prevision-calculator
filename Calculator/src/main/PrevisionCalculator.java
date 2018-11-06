@@ -2,49 +2,124 @@ package main;
 
 import model.*;
 import model.criteria.Criteria;
+import model.criteria.ScontriDirettiCriteria;
 import model.criteria.Teams;
-import model.criteria.impl.NapoliChampionsCriteria;
-import model.criteria.impl.RomaChampionsCriteria;
+import model.criteria.impl.LazioChampionsCriteria;
+import utils.CalcolatorePunti;
+import utils.ClassificaSorter;
+import utils.PossibilityCalculator;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author vcaprio
  */
 public class PrevisionCalculator {
-    private static String subject;
 
-    private static final int VITTORIA = 3;
-    private static final int SCONFITTA = 0;
-    private static final int PAREGGIO = 1;
+    private static String subject = Teams.LAZIO;
+    private static Criteria championsCriteria = new LazioChampionsCriteria();
+    private static List<ScontriDirettiCriteria> scontriDirettiCriteria = setScontriDirettiLazio();
 
     private static List<Giornata> giornateRimanenti = new ArrayList<>();
     private static HashMap<String,ClassificaEntry> classifica = new HashMap<>();
-    private static Possibilities possibilities3 = new Possibilities();
-    private static Possibilities possibilities2 = new Possibilities();
 
-    private static Criteria championsCriteria;
+    private static CalcolatorePunti calcolatorePunti = new CalcolatorePunti();
+    private static ClassificaSorter classificaSorter = new ClassificaSorter();
 
-    private static void stampa(String string){
-        System.out.println(string);
+
+    public static void main(String[] args) {
+
+        init();
+        Tentativi tentativi = new Tentativi(0);
+
+
+        List<Previsione> previsioneList = calculate(subject, 37, giornateRimanenti, new ArrayList<Giornata>(), classifica,
+                new ArrayList<Previsione>(), tentativi, championsCriteria, scontriDirettiCriteria);
+
+        try {
+            printPrevisions(subject, previsioneList, tentativi);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void printPrevisions(List<Previsione> previsiones, Tentativi tentativi) throws IOException {
+    private static List<ScontriDirettiCriteria> setScontriDirettiNapoli() {
+        final ScontriDirettiCriteria confrontiNapoliRoma = new ScontriDirettiCriteria(Teams.NAPOLI, Teams.ROMA);
+        confrontiNapoliRoma.addPartita(new Partita(Teams.NAPOLI, Teams.ROMA).setEsito("1"));
+        confrontiNapoliRoma.addPartita(new Partita(Teams.ROMA, Teams.NAPOLI).setEsito("2"));
+
+        final ScontriDirettiCriteria confrontiNapoliLazio = new ScontriDirettiCriteria(Teams.NAPOLI, Teams.LAZIO);
+        confrontiNapoliLazio.addPartita(new Partita(Teams.NAPOLI, Teams.LAZIO).setEsito("1"));
+
+        return new ArrayList<ScontriDirettiCriteria>(){{
+            add(confrontiNapoliRoma);
+            add(confrontiNapoliLazio);
+        }};
+    }
+
+    private static List<ScontriDirettiCriteria> setScontriDirettiRoma() {
+        final ScontriDirettiCriteria confrontiNapoliRoma = new ScontriDirettiCriteria(Teams.NAPOLI, Teams.ROMA);
+        confrontiNapoliRoma.addPartita(new Partita(Teams.NAPOLI, Teams.ROMA).setEsito("1"));
+        confrontiNapoliRoma.addPartita(new Partita(Teams.ROMA, Teams.NAPOLI).setEsito("2")); // GOL Favore Napoli
+
+        final ScontriDirettiCriteria confrontiRomaLazio = new ScontriDirettiCriteria(Teams.ROMA, Teams.LAZIO);
+        confrontiRomaLazio.addPartita(new Partita(Teams.ROMA, Teams.LAZIO).setEsito("1"));
+
+        return new ArrayList<ScontriDirettiCriteria>(){{
+            add(confrontiNapoliRoma);
+            add(confrontiRomaLazio);
+        }};
+    }
+
+    private static List<ScontriDirettiCriteria> setScontriDirettiLazio() {
+        final ScontriDirettiCriteria confrontiNapoliRoma = new ScontriDirettiCriteria(Teams.NAPOLI, Teams.ROMA);
+        confrontiNapoliRoma.addPartita(new Partita(Teams.NAPOLI, Teams.ROMA).setEsito("1"));
+        confrontiNapoliRoma.addPartita(new Partita(Teams.ROMA, Teams.NAPOLI).setEsito("2")); // GOL Favore Napoli
+
+        final ScontriDirettiCriteria confrontiNapoliLazio = new ScontriDirettiCriteria(Teams.NAPOLI, Teams.LAZIO);
+        confrontiNapoliLazio.addPartita(new Partita(Teams.NAPOLI, Teams.LAZIO).setEsito("1"));
+
+        return new ArrayList<ScontriDirettiCriteria>(){{
+            add(confrontiNapoliRoma);
+            add(confrontiNapoliLazio);
+        }};
+    }
+
+    public static void printPrevisions(String team, List<Previsione> previsiones, Tentativi tentativi) throws IOException {
         String mainStream = new String();
         FileWriter fileWriter = new FileWriter(new File("/Users/Berserk/Documents/Project/Results/results.txt"));
 
         float P = (float) previsiones.size() / tentativi.getCount();
-        String incipit = "Totale Combinazioni " + tentativi.getCount()
+        String incipit = "\t\t\t\t\t SQUADRA " + team
+                + "\nTotale Combinazioni " + tentativi.getCount()
                 + "\nTatale Possibilità " + previsiones.size()
                 +"\nProbabilita' di classificazione Champions :" + Math.round( P * 100) +"%";
 
-        printIntoFile(fileWriter, incipit);
+        fileWriter.append(incipit);
+
+        String delimiter = "____________________________________________________________________________________________";
 
         for(Previsione previsione : previsiones){
-            String previsionNum = "\n______________________________\n\n  Previsione numero [" + previsione.getNumero() + "]  \n______________________________";
+            String previsionTitle = "       Previsione numero [" + previsione.getNumero() + "]";
+            String fullEmptySting = new String(new char[delimiter.length()]).replace('\0', ' ');
+
+            int finalLenght = (delimiter.length() - previsionTitle.length());
+
+            String smallEmptyString = new String(new char[finalLenght]).replace('\0', ' ');
+
+            String previsionNum =
+                    "\n " + delimiter +
+                    "\n|" + fullEmptySting + "|"+
+                    "\n|" + previsionTitle + smallEmptyString + "|" +
+                    "\n|" + delimiter + "|\n\n";
+
             mainStream += previsionNum;
 
             List<Giornata> giornate = previsione.getGiornate();
@@ -57,175 +132,84 @@ public class PrevisionCalculator {
                     mainStream += partite;
                 }
             }
-            final HashMap<String, ClassificaEntry> classifica = previsione.getClassifica();
 
-            List<ClassificaEntry> classificaSorted = new ArrayList<ClassificaEntry>(){{
-                add(classifica.get(Teams.NAPOLI));
-                add(classifica.get(Teams.ROMA));
-                add(classifica.get(Teams.LAZIO));
-            }};
+            List<ClassificaEntry> classificaSorted = classificaSorter.getClassificaOrdinata(previsione.getClassifica());
+
+            String prima = classificaSorted.get(0).getSquadra();
+            int primaPunti = classificaSorted.get(0).getPunteggio();
+
+            String seconda = classificaSorted.get(1).getSquadra();
+            int secondaPunti = classificaSorted.get(1).getPunteggio();
 
 
-            Collections.sort(classificaSorted, new Comparator<ClassificaEntry>() {
-                @Override
-                public int compare(ClassificaEntry entry1, ClassificaEntry entry2) {
-                    if(entry1.getPunteggio() > entry2.getPunteggio()){
-                        return 1;
-                    }
+            String terzaTmp = classificaSorted.get(2).getSquadra();
+            String currTerza = terzaTmp;
+            int terzaTmpPunti = classificaSorted.get(2).getPunteggio();
+            int currTerzaPunti = terzaTmpPunti;
 
-                    if(entry1.getPunteggio() < entry2.getPunteggio()){
-                        return -1;
-                    }
-                    return 0;
+            String quartaTmp = classificaSorted.get(3).getSquadra();
+            String currQuarta =quartaTmp;
+            int quartaTmpPunti = classificaSorted.get(3).getPunteggio();
+            int currQuartaPunti =quartaTmpPunti;
+
+            String nota = "";
+            if(quartaTmpPunti == terzaTmpPunti){
+                if(classificaSorted.get(3).getSquadreVinceScontriDiretti().contains(terzaTmp)){
+                    nota = "(" + classificaSorted.get(3).getSquadra() + "Vince scontri diretti con " + terzaTmp + ")";
+                    currTerza = quartaTmp;
+                    currTerzaPunti = quartaTmpPunti;
+                    currQuarta = terzaTmp;
+                    currQuartaPunti = terzaTmpPunti;
                 }
-            });
+                else{
+                    if(classificaSorted.get(2).getSquadreVinceScontriDiretti().contains(quartaTmp)){
+                        nota = "(" + classificaSorted.get(3).getSquadra() + "Vince scontri diretti con " + quartaTmp + ")";
+                    }
+                }
+            }
 
-            String classificaString = String.format("\nClassifica Finale : \n%s[%d] - %s[%d] - %s[%d]\n",
-                    classificaSorted.get(2).getSquadra(), classificaSorted.get(2).getPunteggio(),
-                    classificaSorted.get(1).getSquadra(), classificaSorted.get(1).getPunteggio(),
-                    classificaSorted.get(0).getSquadra(), classificaSorted.get(0).getPunteggio()
+            String classificaString = String.format("\nClassifica Finale : \n%s[%d] WIN - %s[%d] * - %s[%d] * %s - %s[%d]\n",
+                    prima, primaPunti,
+                    seconda, secondaPunti,
+                    currTerza, currTerzaPunti,
+                    nota,
+                    currQuarta, currQuartaPunti
             );
 
             mainStream += classificaString;
-            printIntoFile(fileWriter, mainStream);
+            fileWriter.append(mainStream);
 
             mainStream = "";
         }
         fileWriter.close();
-        stampa("Operazione Terminata");
-    }
-
-    public static void printIntoFile(FileWriter fileWriter, String string) throws IOException {
-        fileWriter.append(string);
-    }
-
-    public static void main(String[] args) {
-
-        init();
-        Tentativi tentativi = new Tentativi(0);
-        List<Previsione> previsioneList = calculate(subject, 35, giornateRimanenti, new ArrayList<Giornata>(), classifica, new ArrayList<Previsione>(), tentativi, championsCriteria);
-
-        try {
-            printPrevisions(previsioneList, tentativi);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        stampa("\n\n\n !! Operazione Terminata !!");
     }
 
     private static void init(){
-        subject = Teams.NAPOLI;
-        championsCriteria = new NapoliChampionsCriteria();
 
 
-        // 27 possibilita' 3 partite
-        possibilities3.addPossibility(new String[]{"1","1","1"});
-        possibilities3.addPossibility(new String[]{"x","1","1"});
-        possibilities3.addPossibility(new String[]{"2","1","1"});
-        possibilities3.addPossibility(new String[]{"1","1","x"});
-        possibilities3.addPossibility(new String[]{"x","1","x"});
-        possibilities3.addPossibility(new String[]{"2","1","x"});
-        possibilities3.addPossibility(new String[]{"1","1","2"});
-        possibilities3.addPossibility(new String[]{"2","1","2"});
-        possibilities3.addPossibility(new String[]{"x","1","2"});
-        possibilities3.addPossibility(new String[]{"1","x","1"});
-        possibilities3.addPossibility(new String[]{"x","x","1"});
-        possibilities3.addPossibility(new String[]{"2","x","1"});
-        possibilities3.addPossibility(new String[]{"1","x","x"});
-        possibilities3.addPossibility(new String[]{"x","x","x"});
-        possibilities3.addPossibility(new String[]{"2","x","x"});
-        possibilities3.addPossibility(new String[]{"1","x","2"});
-        possibilities3.addPossibility(new String[]{"x","x","2"});
-        possibilities3.addPossibility(new String[]{"2","x","2"});
-        possibilities3.addPossibility(new String[]{"1","2","1"});
-        possibilities3.addPossibility(new String[]{"x","2","1"});
-        possibilities3.addPossibility(new String[]{"2","2","1"});
-        possibilities3.addPossibility(new String[]{"1","2","x"});
-        possibilities3.addPossibility(new String[]{"x","2","x"});
-        possibilities3.addPossibility(new String[]{"2","2","x"});
-        possibilities3.addPossibility(new String[]{"1","2","2"});
-        possibilities3.addPossibility(new String[]{"x","2","2"});
-        possibilities3.addPossibility(new String[]{"2","2","2"});
-
-
-        // 9 possibilita' 2 partite
-        possibilities2.addPossibility(new String[]{"1","1"});
-        possibilities2.addPossibility(new String[]{"x","1"});
-        possibilities2.addPossibility(new String[]{"2","1"});
-        possibilities2.addPossibility(new String[]{"1","2"});
-        possibilities2.addPossibility(new String[]{"x","x"});
-        possibilities2.addPossibility(new String[]{"2","x"});
-        possibilities2.addPossibility(new String[]{"1","x"});
-        possibilities2.addPossibility(new String[]{"x","2"});
-        possibilities2.addPossibility(new String[]{"2","2"});
-
-
-        Giornata giornata = new Giornata(35);
-        giornata.setPartite(new ArrayList<Partita>(){{
-            add(new Partita(Teams.MILAN, Teams.ROMA));
-            add(new Partita(Teams.PARMA, Teams.NAPOLI));
-            add(new Partita(Teams.LAZIO, Teams.INTER));
-        }});
-
-        Giornata giornata2 = new Giornata(36);
-        giornata2.setPartite(new ArrayList<Partita>(){{
-            add(new Partita(Teams.NAPOLI, Teams.CESENA));
-            add(new Partita(Teams.SAMPDORIA, Teams.LAZIO));
-            add(new Partita(Teams.ROMA, Teams.UDINESE));
-        }});
-
-        Giornata giornata3 = new Giornata(37);
-        giornata3.setPartite(new ArrayList<Partita>(){{
-            add(new Partita(Teams.JUVE, Teams.NAPOLI));
+        Giornata giornata37 = new Giornata(37);
+        giornata37.setPartite(new ArrayList<Partita>() {{
             add(new Partita(Teams.LAZIO, Teams.ROMA));
         }});
 
-        Giornata giornata4 = new Giornata(38);
-        giornata4.setPartite(new ArrayList<Partita>(){{
+        Giornata giornata38 = new Giornata(38);
+        giornata38.setPartite(new ArrayList<Partita>() {{
             add(new Partita(Teams.NAPOLI, Teams.LAZIO));
             add(new Partita(Teams.ROMA, Teams.PALERMO));
         }});
 
-        giornateRimanenti.add(giornata);
-        giornateRimanenti.add(giornata2);
-        giornateRimanenti.add(giornata3);
-        giornateRimanenti.add( giornata4 );
+        giornateRimanenti.add(giornata37);
+        giornateRimanenti.add(giornata38);
 
-        classifica.put(Teams.JUVE, new ClassificaEntry(Teams.JUVE, 79));
-        classifica.put(Teams.ROMA, new ClassificaEntry(Teams.ROMA, 64));
-        classifica.put(Teams.LAZIO, new ClassificaEntry(Teams.LAZIO, 63));
-        classifica.put(Teams.NAPOLI, new ClassificaEntry(Teams.NAPOLI, 59));
+        classifica.put(Teams.JUVE, new ClassificaEntry(Teams.JUVE, 83));
+        classifica.put(Teams.LAZIO, new ClassificaEntry(Teams.LAZIO, 66));
+        classifica.put(Teams.ROMA, new ClassificaEntry(Teams.ROMA, 67));
+        classifica.put(Teams.NAPOLI, new ClassificaEntry(Teams.NAPOLI, 63));
     }
 
-
-
-    private static List<RisultatoPartita> calculatePoint(final Partita partita){
-
-        switch( partita.getEsito() ){
-            case "1" :
-
-                return new ArrayList<RisultatoPartita>(){{
-                    add(new RisultatoPartita(partita.getSquadraCasa(), VITTORIA, partita));
-                    add(new RisultatoPartita(partita.getSquadraTrasferta(), SCONFITTA, partita));
-                }};
-
-            case "2" :
-                return new ArrayList<RisultatoPartita>(){{
-                    add(new RisultatoPartita(partita.getSquadraCasa(), SCONFITTA, partita));
-                    add(new RisultatoPartita(partita.getSquadraTrasferta(), VITTORIA, partita));
-                }};
-
-
-            default :
-                return new ArrayList<RisultatoPartita>(){{
-                    add(new RisultatoPartita(partita.getSquadraCasa(), PAREGGIO, partita));
-                    add(new RisultatoPartita(partita.getSquadraTrasferta(), PAREGGIO, partita));
-                }};
-        }
-    }
 
     private static void updateClassifica(Map<String, ClassificaEntry> classifica, List<RisultatoPartita> risultatoPartite){
-
         for(RisultatoPartita risultatoPartita : risultatoPartite){
             if(classifica.get(risultatoPartita.getSquadra()) == null ){
                 classifica.put(risultatoPartita.getSquadra(),new ClassificaEntry(risultatoPartita.getSquadra(),0));
@@ -243,6 +227,7 @@ public class PrevisionCalculator {
     }
 
     private static Giornata getGiornata(List<Giornata> giornate, int giorno){
+        //Add Collections2 google lib
         for(Giornata giornata : giornate){
             if(giornata.getNumeroGiornate() == giorno){
                 return giornata;
@@ -261,21 +246,36 @@ public class PrevisionCalculator {
         return newClassifica;
     }
 
-    private static List<RisultatoPartita> partitaDecisa(Partita partita, String pronostico){
+    private static ScontriDirettiCriteria retriveScontroDiretto(List<ScontriDirettiCriteria> scontriDirettiCriteria, String squadra1, String squadra2){
+        for(ScontriDirettiCriteria scontroDir : scontriDirettiCriteria ){
+            if(scontroDir.isSControTra(squadra1, squadra2))
+                return scontroDir;
+        }
+
+        ScontriDirettiCriteria newScontroDiretto = new ScontriDirettiCriteria(squadra1, squadra2);
+        scontriDirettiCriteria.add(newScontroDiretto);
+
+        return newScontroDiretto;
+    }
+
+    private static List<RisultatoPartita> simulaPartita(Partita partita, String pronostico){
         Partita esito = new Partita(partita.getSquadraCasa(), partita.getSquadraTrasferta());
         esito.setEsito(pronostico);
 
-        return calculatePoint(esito);
+        return calcolatorePunti.calculatePoint(esito);
     }
 
 
-
-
-    private static List<Previsione> calculate(String team, int day, List<Giornata> giornate, List<Giornata> risultatiConseguiti, HashMap<String, ClassificaEntry> classifica, List<Previsione> previsions, Tentativi tentativi, Criteria championsCriteria){
+    private static List<Previsione> calculate(String team, int day, List<Giornata> giornate, List<Giornata> risultatiConseguiti, HashMap<String, ClassificaEntry> classifica,
+                                              List<Previsione> previsions, Tentativi tentativi, Criteria championsCriteria, List<ScontriDirettiCriteria> scontriDiretti){
 
         if(day > 38){
             tentativi.increment();
-            if( championsCriteria.isValid(classifica) ){
+            InfoClassificazione infoClassificazione = championsCriteria.isValid(classifica, scontriDiretti);
+            if(infoClassificazione.isChampions()){
+                classifica.get(team).getSquadreVinceScontriDiretti()
+                    .addAll(infoClassificazione.getConfrontiVinti());
+
                 previsions.add(makePrevisions( previsions.size() + 1, risultatiConseguiti, classifica));
                 return previsions;
             }
@@ -285,22 +285,25 @@ public class PrevisionCalculator {
         Giornata giornata = getGiornata(giornate, day);
         HashMap<String,ClassificaEntry> classificaParziale = cloneClassifica(classifica);
 
-        Possibilities possibilityTarget;
-        if(giornata.getPartite().size() == 3) {
-            possibilityTarget = possibilities3;
-        }else{
-            possibilityTarget = possibilities2;
-        }
+        Possibilities possibilityTarget = getPossibilitaPerPartite(giornata);
 
         for(final String[] possibility : possibilityTarget.getPossibilityList()){
+
             List<RisultatoPartita> results = new ArrayList<>();
             Giornata pronosticoGiornata = new Giornata(day);
             ArrayList<Partita> partitas = new ArrayList<>();
 
-            for(int index=0; index<possibility.length; index++){
+            List<ScontriDirettiCriteria> scontriDirettiParziali = cloneScontriDirettiList(scontriDiretti);
+
+            int numeroPartiteNellaGiornata = possibility.length;
+            for(int index=0; index < numeroPartiteNellaGiornata; index++){
                 Partita partita = giornata.getPartite().get(index);
-                results.addAll(partitaDecisa(partita, possibility[index]));
-                partitas.add(new Partita(partita.getSquadraCasa(), partita.getSquadraTrasferta()).setEsito(possibility[index]));
+                results.addAll(simulaPartita(partita, possibility[index]));
+                Partita partitaCorrente = new Partita(partita.getSquadraCasa(), partita.getSquadraTrasferta()).setEsito(possibility[index]);
+                partitas.add(partitaCorrente);
+
+                ScontriDirettiCriteria scontroDiretto  = retriveScontroDiretto(scontriDirettiParziali, partita.getSquadraCasa(), partita.getSquadraTrasferta());
+                scontroDiretto.addPartita(partitaCorrente);
             }
 
             updateClassifica(classificaParziale, results);
@@ -310,9 +313,9 @@ public class PrevisionCalculator {
             risultatiCalcolatiCurrent.add(pronosticoGiornata);
 
             if(day < 39){
-                calculate(team, day + 1, giornate, risultatiCalcolatiCurrent, classificaParziale, previsions, tentativi, championsCriteria);
+                calculate(team, day + 1, giornate, risultatiCalcolatiCurrent, classificaParziale, previsions, tentativi, championsCriteria, scontriDirettiParziali);
             }else{
-                calculate(team, day, giornate, risultatiCalcolatiCurrent, classificaParziale, previsions, tentativi, championsCriteria);
+                calculate(team, day, giornate, risultatiCalcolatiCurrent, classificaParziale, previsions, tentativi, championsCriteria, scontriDirettiParziali);
             }
 
             classificaParziale = cloneClassifica(classifica);
@@ -321,6 +324,45 @@ public class PrevisionCalculator {
         return previsions;
     }
 
+    private static Possibilities getPossibilitaPerPartite(Giornata giornata) {
+        PossibilityCalculator possibilityCalculator = new PossibilityCalculator();
+        return possibilityCalculator.getPossibility(giornata.getPartite().size(), giornata.getNumeroGiornate());
+    }
+
+    private static ArrayList<ScontriDirettiCriteria> cloneScontriDirettiList(List<ScontriDirettiCriteria> scontriDiretti) {
+        ArrayList<ScontriDirettiCriteria> result = new ArrayList<>();
+
+        for(ScontriDirettiCriteria criteria : scontriDiretti){
+            ScontriDirettiCriteria newScontroDiretto = new ScontriDirettiCriteria(criteria.getSquadre());
+
+            for(Partita partita : criteria.getStoricoPartite()){
+                Partita newPartita = new Partita(partita.getSquadraCasa(), partita.getSquadraTrasferta());
+                partita.getEsito();
+
+                newScontroDiretto.getStoricoPartite().add(newPartita);
+            }
+
+            HashMap<String, ClassificaEntry> newClasificaAvulsa = new HashMap<>();
+            for(String key : criteria.getClassificaAvulsa().keySet()){
+                ClassificaEntry classificaEntry = criteria.getClassificaAvulsa().get(key);
+                ClassificaEntry nuovaClassificaEntry = new ClassificaEntry(classificaEntry.getSquadra(), classificaEntry.getPunteggio());
+
+                for(String vinceContro : classificaEntry.getSquadreVinceScontriDiretti()){
+                    nuovaClassificaEntry.addSquadraVinceSContriDiretti(vinceContro);
+                }
+
+                newClasificaAvulsa.put(key, nuovaClassificaEntry);
+            }
+            newScontroDiretto.setClassificaAvulsa(newClasificaAvulsa);
+            result.add(newScontroDiretto);
+        }
+
+        return result;
+    }
+
+    private static void stampa(String string){
+        System.out.println(string);
+    }
 }
 
 
