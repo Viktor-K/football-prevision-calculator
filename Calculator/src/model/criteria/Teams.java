@@ -16,4 +16,7 @@ public interface Teams {
     public  String INTER="INTER";
     public  String CESENA="CESENA";
 
+    public String LIVERPOOL="LIVERPOOL";
+    public String PSG="PSG";
+    public String STELLA_ROSSA="STELLA_ROSSA";
 }

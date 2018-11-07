@@ -1,0 +1,858 @@
+					 SQUADRA NAPOLI
+Totale Combinazioni 81
+Tatale Possibilità 57
+Probabilita' di classificazione Champions :70%
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [1]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[9] WIN - NAPOLI[9] * - PSG[8] *  - STELLA_ROSSA[7]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [2]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[9] WIN - PSG[9] * - NAPOLI[9] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [3]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[10] WIN - PSG[8] * - STELLA_ROSSA[7] *  - LIVERPOOL[7]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [4]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[10] WIN - PSG[9] * - LIVERPOOL[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [5]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+PSG[11] WIN - NAPOLI[10] * - LIVERPOOL[7] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [6]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[12] WIN - PSG[8] * - STELLA_ROSSA[7] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [7]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[12] WIN - PSG[9] * - LIVERPOOL[6] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [8]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[12] WIN - PSG[11] * - LIVERPOOL[6] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [9]                                                                |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[9] * - STELLA_ROSSA[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [10]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[9] * - PSG[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [11]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[8] * - STELLA_ROSSA[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [12]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[8] * - PSG[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [13]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[10] WIN - PSG[9] * - LIVERPOOL[8] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [14]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[12] WIN - STELLA_ROSSA[7] * - LIVERPOOL[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [15]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[12] WIN - LIVERPOOL[7] * - PSG[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [16]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[12] WIN - PSG[9] * - LIVERPOOL[7] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [17]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[12] WIN - NAPOLI[9] * - STELLA_ROSSA[7] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [18]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[12] WIN - NAPOLI[9] * - PSG[6] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [19]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+LIVERPOOL[12] WIN - NAPOLI[9] * - PSG[8] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [20]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[10] * - STELLA_ROSSA[7] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [21]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[10] * - PSG[6] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [22]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[10] * - PSG[8] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [23]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[12] WIN - LIVERPOOL[9] * - STELLA_ROSSA[7] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [24]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[12] WIN - LIVERPOOL[9] * - PSG[6] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [25]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 1
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[12] WIN - LIVERPOOL[9] * - PSG[8] *  - STELLA_ROSSA[4]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [26]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[8] WIN - PSG[8] * - NAPOLI[8] *  - LIVERPOOL[7]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [27]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+PSG[9] WIN - NAPOLI[8] * - LIVERPOOL[7] *  - STELLA_ROSSA[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [28]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+PSG[11] WIN - NAPOLI[8] * - LIVERPOOL[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [29]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[10] WIN - STELLA_ROSSA[8] * - PSG[8] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [30]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[10] WIN - PSG[9] * - STELLA_ROSSA[6] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [31]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+PSG[11] WIN - NAPOLI[10] * - LIVERPOOL[6] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [32]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[10] WIN - STELLA_ROSSA[8] * - NAPOLI[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [33]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[8] WIN - LIVERPOOL[8] * - NAPOLI[8] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [34]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[8] WIN - NAPOLI[8] * - PSG[7] *  - STELLA_ROSSA[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [35]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[10] WIN - STELLA_ROSSA[8] * - LIVERPOOL[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [36]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[7] * - PSG[7] *  - STELLA_ROSSA[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [37]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[10] WIN - PSG[9] * - LIVERPOOL[7] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [38]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[12] WIN - STELLA_ROSSA[8] * - NAPOLI[7] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [39]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[12] WIN - NAPOLI[7] * - STELLA_ROSSA[6] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [40]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[10] WIN - STELLA_ROSSA[8] * - NAPOLI[8] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [41]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[10] WIN - NAPOLI[8] * - STELLA_ROSSA[6] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [42]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[9] * - STELLA_ROSSA[8] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [43]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[9] * - STELLA_ROSSA[6] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [44]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : x
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+NAPOLI[10] WIN - LIVERPOOL[9] * - PSG[8] *  - STELLA_ROSSA[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [45]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[10] WIN - NAPOLI[9] * - PSG[8] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [46]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+PSG[9] WIN - NAPOLI[9] * - STELLA_ROSSA[8] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [47]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 1
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+PSG[11] WIN - NAPOLI[9] * - STELLA_ROSSA[7] *  - LIVERPOOL[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [48]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[10] WIN - LIVERPOOL[8] * - NAPOLI[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [49]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[10] WIN - NAPOLI[9] * - LIVERPOOL[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [50]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+NAPOLI[9] WIN - STELLA_ROSSA[8] * - LIVERPOOL[7] *  - PSG[7]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [51]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : x
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+PSG[9] WIN - NAPOLI[9] * - STELLA_ROSSA[7] *  - LIVERPOOL[7]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [52]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 1
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+LIVERPOOL[12] WIN - STELLA_ROSSA[10] * - NAPOLI[6] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [53]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[10] WIN - LIVERPOOL[10] * - NAPOLI[7] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [54]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : x
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[10] WIN - STELLA_ROSSA[8] * - NAPOLI[7] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [55]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 1
+Classifica Finale : 
+STELLA_ROSSA[10] WIN - LIVERPOOL[9] * - NAPOLI[9] *  - PSG[5]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [56]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : x
+Classifica Finale : 
+LIVERPOOL[9] WIN - NAPOLI[9] * - STELLA_ROSSA[8] *  - PSG[6]
+
+ ____________________________________________________________________________________________
+|                                                                                            |
+|       Previsione numero [57]                                                               |
+|____________________________________________________________________________________________|
+
+
+		Giornata5
+			NAPOLI - STELLA_ROSSA : 2
+			PSG - LIVERPOOL : 2
+		Giornata6
+			LIVERPOOL - NAPOLI : 2
+			STELLA_ROSSA - PSG : 2
+Classifica Finale : 
+LIVERPOOL[9] WIN - NAPOLI[9] * - PSG[8] *  - STELLA_ROSSA[7]
